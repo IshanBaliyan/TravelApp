@@ -6,7 +6,11 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
 
+const pinRoute = require("./routes/pins");
+
 dotenv.config();
+
+app.use(express.json())
 
 // simply taken below (to connect to MongoDB) from the docs: https://mongoosejs.com/docs/connections.html
 mongoose
@@ -19,7 +23,7 @@ mongoose
     })
     .catch(err=>console.log(err));
 
-    app.post("/users/login");
+app.use("/api/pins", pinRoute);
 
 app.listen(8800, ()=>{
     console.log("Backend server is running!");
