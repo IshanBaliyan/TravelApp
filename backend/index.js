@@ -6,7 +6,13 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
 
+// use for routing user create/get from database, and also test performance with Postman
+const userRoute = require("./routes/users");
+
+// use for routing pin create/get from database, and also test performance with Postman
 const pinRoute = require("./routes/pins");
+
+
 
 dotenv.config();
 
@@ -23,7 +29,9 @@ mongoose
     })
     .catch(err=>console.log(err));
 
+app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
+
 
 app.listen(8800, ()=>{
     console.log("Backend server is running!");

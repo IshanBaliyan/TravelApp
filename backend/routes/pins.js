@@ -2,8 +2,8 @@ const router = require("express").Router();
 
 const Pin = require("../models/Pin");
 
-//create a pin
-
+//Create a pin:
+// Testing with Postman
 router.post("/", async (req,res)=>{
     const newPin = new Pin(req.body)
     try{
@@ -17,8 +17,17 @@ router.post("/", async (req,res)=>{
         // set to 500, meaning failure
         res.status(500).json(err)
     }
-})
+});
 
-//get all pins
+//Get all pins:
+// Testing with Postman
+router.get("/", async (req,res) => {
+    try{
+        const pins = await Pin.find();
+        res.status(200).json(pins);
+    }catch(err){
+        res.status(500).json(er)
+    }
+});
 
 module.exports = router
