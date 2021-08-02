@@ -32,7 +32,7 @@ mongoose
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
-
-app.listen(8800, ()=>{
+// Try to run on heroku, if it doesn't work, run on local computer on port 8800
+app.listen(process.env.PORT || 8800, ()=>{
     console.log("Backend server is running!");
 });
