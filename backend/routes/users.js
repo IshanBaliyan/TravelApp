@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // Register:
 //(use "http://localhost:8800/api/users/register" on Postman for testing)
