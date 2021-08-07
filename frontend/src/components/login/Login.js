@@ -17,7 +17,7 @@ export default function Login({ setShowLogin,myStorage,setCurrentUser }) {
         };
 
         try{
-            const res = await axios.post("users/login", user);
+            const res = await axios.post("api/users/login", user);
 
             // Set local storage for username
             myStorage.setItem("user", res.data.username);

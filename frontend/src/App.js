@@ -33,7 +33,7 @@ function App() {
   useEffect(()=>{
     const getPins = async ()=>{
       try{
-        const res = await axios.get("/pins");
+        const res = await axios.get("api/pins");
         setPins(res.data);
       }catch(err){
         console.log(err);
@@ -69,7 +69,7 @@ function App() {
       long: newPlace.long,
     }
     try{
-      const res = await axios.post("/pins", newPin);
+      const res = await axios.post("api/pins", newPin);
       setPins([...pins, res.data]);
       setNewPlace(null);
     }catch(err){
