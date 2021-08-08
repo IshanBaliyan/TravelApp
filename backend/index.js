@@ -12,15 +12,23 @@ const userRoute = require("./routes/users");
 // use for routing pin create/get from database, and also test performance with Postman
 const pinRoute = require("./routes/pins");
 
-
+const MONGODB_PASSWORD = "MongoDB@321";
 
 dotenv.config();
 
 app.use(express.json())
 
-// simply taken below (to connect to MongoDB) from the docs: https://mongoosejs.com/docs/connections.html
+// simply taken below (to conne;ct to MongoDB) from the docs: https://mongoosejs.com/docs/connections.html
+// Normally, use thef following (but I'm showing url for deploying app to a website):
+// mongoose
+//     .connect(process.env.MONGO_URL, {
+//          useNewUrlParser: true, 
+//          useUnifiedTopology: true 
+//     })
+
+
 mongoose
-    .connect(process.env.MONGO_URL, {
+    .connect(`mongodb+srv://IshanB:${MONGODB_PASSWORD}@cluster0.86tw3.mongodb.net/pin?retryWrites=true&w=majority`, {
          useNewUrlParser: true, 
          useUnifiedTopology: true 
     })
@@ -33,6 +41,7 @@ app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
 // Try to run on heroku, if it doesn't work, run on local computer on port 8800
+// The following process.env.port variable is NOT from your local env file, rather from the env file ON THE HEROKU SERVER:
 app.listen(process.env.PORT || 8800, ()=>{
     console.log("Backend server is running!");
 });
