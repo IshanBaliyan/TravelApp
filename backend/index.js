@@ -25,7 +25,15 @@ app.use(express.json())
 //          useNewUrlParser: true, 
 //          useUnifiedTopology: true 
 //     })
-
+// const cors = require('cors');
+// app.use(cors({origin: 'http://localhost:3000/',credentials : true}));
+// app.use(function (req, res, next) {	
+//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000/');    
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');    
+//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');   
+//     res.setHeader('Access-Control-Allow-Credentials', true);    
+//     next();
+// });
 
 mongoose
     .connect(`mongodb+srv://IshanB:${MONGODB_PASSWORD}@cluster0.86tw3.mongodb.net/pin?retryWrites=true&w=majority`, {

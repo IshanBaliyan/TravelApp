@@ -25,6 +25,7 @@ export default function Register({ setShowRegister }) {
             setSuccess(true);
 
         }catch(err){
+            console.log("Did NOT WORK: " + err);
             setError(true);
         }
     };
