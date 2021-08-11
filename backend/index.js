@@ -30,7 +30,8 @@ app.use(express.json())
 mongoose
     .connect(`mongodb+srv://IshanB:${MONGODB_PASSWORD}@cluster0.86tw3.mongodb.net/pin?retryWrites=true&w=majority`, {
          useNewUrlParser: true, 
-         useUnifiedTopology: true 
+         useUnifiedTopology: true,
+         useCreateIndex: true, 
     })
     .then(()=>{
         console.log("MongoDB Connected!");
