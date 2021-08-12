@@ -38,12 +38,12 @@ app.use(express.json())
 var cors = require('cors');
 
 // use it before all route definitions
-app.use(cors({origin: 'https://travel-pin-app.netlify.app/'}));
+app.use(cors({credentials : true}));
 
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://travel-pin-app.netlify.app/');
+    res.setHeader('Access-Control-Allow-Origin', '*');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
