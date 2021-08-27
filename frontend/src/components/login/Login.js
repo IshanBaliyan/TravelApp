@@ -17,7 +17,9 @@ export default function Login({ setShowLogin,myStorage,setCurrentUser }) {
         };
 
         try{
-            const res = await axios.post("/users/login", user);
+
+            // Before adding in the heroku url below, it was originally set as "/users/login"
+            const res = await axios.post("https://travel-pin-map-app.herokuapp.com/users/login", user);
 
             // Set local storage for username
             myStorage.setItem("user", res.data.username);

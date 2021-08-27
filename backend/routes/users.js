@@ -4,9 +4,11 @@ const bcrypt = require("bcryptjs");
 
 // Register:
 //(use "http://localhost:8800/api/users/register" on Postman for testing)
+
+// Before adding in the heroku url below, it was originally set as "/register"
 router.post("/register", async (req,res)=>{
     try{
-       //Generate new password:
+        // Generate new password:
         // Use bcrypt to make a new password and sort of "censor" the real password
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
@@ -30,7 +32,7 @@ router.post("/register", async (req,res)=>{
 
 //Login:
 //(use "http://localhost:8800/api/users/login" on Postman for testing)
-
+// Before adding in the heroku url below, it was originally set as "/login"
 router.post("/login", async (req, res)=>{
     try{
 
