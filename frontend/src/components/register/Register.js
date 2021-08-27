@@ -21,7 +21,7 @@ export default function Register({ setShowRegister }) {
 
         // Before adding in the heroku url below, it was originally set as "/users/register"
         try{
-            await axios.post("https://travel-pin-map-app.herokuapp.com/users/register", newUser);
+            await axios.post("https://travel-pin-map-app.herokuapp.com/api/users/register", newUser);
             setError(false);
             setSuccess(true);
 
