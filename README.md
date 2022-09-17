@@ -1,4 +1,5 @@
-# TravelApp - Built with MERN Stack: MongoDB, Express, React, Node.js
+# TravelApp 
+Built with MERN Stack: **MongoDB, Express, React, Node.js**
 #### Login-based travel app for bookmarking and reviewing your favourite map locations.
 
 # DEMO: https://travel-app-delta.vercel.app/
